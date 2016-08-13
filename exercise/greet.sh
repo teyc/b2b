@@ -1,2 +1,3 @@
 #!/bin/bash
-nc -l 38105 < hello.txt
+cd /home/chui/b2b/exercise/
+/bin/nc -l 38105 < hello.txt
