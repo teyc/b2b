@@ -35,7 +35,7 @@ class adduser:
      salt = "".join([random.choice(adjective) for i in range(3)])
      password = "".join([random.choice('abcdefgh0123456789ABCDEFGHIJLKMSQPZ') for i in range(8)])
      passwordc = crypt.crypt(password, salt)
-     os.system('useradd -s /bin/bash -m -p %s %s' % (passwordc, username))
+     os.system('useradd -g b2busers -s /bin/bash -m -p %s %s' % (passwordc, username))
      return """
 Your username is %s
 password is %s
