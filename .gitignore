@@ -1,8 +1,11 @@
-<<<<<<< HEAD
-web.py-*/
+web
+web.py-*
+web.py-*/*
+web/*
+
 *.log
 *.pyc
-=======
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -92,4 +95,4 @@ ENV/
 
 # Rope project settings
 .ropeproject
->>>>>>> 0e2a18d3dbee4ff782990485508db595ab5fb406
+
