@@ -106,6 +106,9 @@ Linux for .NET developers
 
           curl http://localhost:58016/
 
+  19. Clear the screen using `CTRL+L`
+
+
 For administrators Configuration
 ========================================
  
