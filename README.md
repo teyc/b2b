@@ -109,6 +109,22 @@ Linux for .NET developers
   19. Clear the screen using `CTRL+L`
 
 
+  20. Palette cleanser
+
+          sudo docker run -it microsoft/dotnet
+          cd ~
+          dotnet new
+          dotnet restore
+          dotnet build
+          dotnet run
+          ls -l
+
+  21. To log out from docker, use CTRL+D
+
+
+  22. To log out from your session, use CTRL+D
+
+
 For administrators Configuration
 ========================================
  
