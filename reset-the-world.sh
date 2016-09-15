@@ -28,6 +28,10 @@ if [ ! -f web.py-0.38.tar.gz ]; then
    tar zxf $WEBPY_TGZ
    ln -s web.py-0.38/web web.py
    chmod -R a+rw web/
+
+   # patch ssl_certificate_chain
+   cp patch/httpserver.py web.py-0.38/web/.
+
 fi
 
 # run the user service as a daemon, restarts automatically
