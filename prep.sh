@@ -1,7 +1,16 @@
 #!/bin/bash
 
+DOMAIN=`cat DOMAIN`
+
+# Install letsencrypt
 apt-get install letsencrypt
-letsencrypt certonly -d readify-linux.australiaeast.cloudapp.azure.com
+
+# Install certs
+letsencrypt certonly -d $DOMAIN
+if [ $? -ne 0 ]; then
+    echo '=== HINT: OPEN PORT 443 on WindowsAzure ===='
+    exit $?
+fi
 
 apt-get install daemon
 

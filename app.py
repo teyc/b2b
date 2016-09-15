@@ -3,9 +3,12 @@ import random
 import crypt
 import os
 
+domain = open('DOMAIN', 'r').readline().strip()
+print 'Domain: ' + domain
+
 from web.wsgiserver import CherryPyWSGIServer
-cert_path = '/etc/letsencrypt/live/readify-b2b.australiaeast.cloudapp.azure.com'
-server_name = 'readify-b2b.australiaeast.cloudapp.azure.com'
+cert_path = '/etc/letsencrypt/live/%s' % domain
+server_name = domain
  
 # curl can't work with cert.pem?
 CherryPyWSGIServer.ssl_certificate = '%s/cert.pem' % cert_path
