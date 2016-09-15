@@ -2,8 +2,21 @@
 
 DOMAIN=`cat DOMAIN`
 
+# Security sensitive!
+groupadd b2busers
+
 # Install letsencrypt
 apt-get install letsencrypt
+
+
+# Install docker
+apt-get install apt-transport-https ca-certificates docker-engine
+sudo apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D
+cp patch/docker.list /etc/apt/sources.list.d/docker.list
+apt-get update
+apt-get install linux-image-extra-$(uname -r) linux-image-extra-virtual
+apt-get install docker-engine
+# TODO https://docs.docker.com/engine/installation/linux/ubuntulinux/
 
 # Install certs if it is not present
 if [ ! -f /etc/letsencrypt/live/$DOMAIN/cert.pem ]; then
