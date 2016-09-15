@@ -32,8 +32,9 @@ fi
 
 apt-get install daemon
 
-# enable challenge password on /etc/ssh/ssh_config
+# enable challenge password on /etc/ssh/ssh_config, and reload the config file
 sed -i 's/ChallengeResponseAuthentication no/ChallengeResponseAuthentication yes/g' /etc/ssh/sshd_config
+/etc/init.d/ssh reload
 
 if [ ! -f web.py-0.38.tar.gz ]; then
    WEBPY_TGZ=web.py-0.38.tar.gz
