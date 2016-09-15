@@ -109,7 +109,30 @@ Linux for .NET developers
   19. Clear the screen using `CTRL+L`
 
 
-  20. Palette cleanser
+Task Manager
+---------------------
+
+  1. top
+
+  2. htop
+
+  3. dstat
+
+  4. strace ls
+     strace python
+
+  5. netstat -ae
+
+  6. opensnoop 
+
+     What's opening and closing the .txt files?
+
+     opensnoop '.txt$' 
+ 
+Palette cleanser
+---------------------
+
+  1. Enough Linux?
 
           sudo docker run -it microsoft/dotnet
           cd ~
@@ -119,11 +142,14 @@ Linux for .NET developers
           dotnet run
           ls -l
 
-  21. To log out from docker, use CTRL+D
+  2. To log out from docker, use CTRL+D
 
 
-  22. To log out from your session, use CTRL+D
+  3. To log out from your session, use CTRL+D
 
+
+  4. Note, this machine has 2GB memory, docker 
+     is virtualization without the overhead
 
 For administrators Configuration
 ========================================
