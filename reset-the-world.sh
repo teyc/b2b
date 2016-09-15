@@ -27,6 +27,7 @@ if [ ! -f web.py-0.38.tar.gz ]; then
    wget http://webpy.org/static/$WEBPY_TGZ
    tar zxf $WEBPY_TGZ
    ln -s web.py-0.38/web web.py
+   chmod -R a+rw web/
 fi
 
 # run the user service as a daemon, restarts automatically
