@@ -5,8 +5,13 @@ DOMAIN=`cat DOMAIN`
 # Install letsencrypt
 apt-get install letsencrypt
 
-# Install certs
-letsencrypt certonly -d $DOMAIN
+# Install certs if it is not present
+if [ ! -f /etc/letsencrypt/live/$DOMAIN/cert.pem ]; then
+   letsencrypt certonly -d $DOMAIN
+else
+   echo 'letsencrypt certificate already present.'
+fi
+
 if [ $? -ne 0 ]; then
     echo '=== HINT: OPEN PORT 443 on WindowsAzure ===='
     exit $?
@@ -24,5 +29,9 @@ if [ ! -f web.py-0.38.tar.gz ]; then
    ln -s web.py-0.38/web web.py
 fi
 
-python app.py 443
+# run the user service as a daemon, restarts automatically
+daemon -r -n app.py -D `pwd` /usr/bin/python app.py 443
 
+# run self test
+echo "Self test"
+curl -i https://$DOMAIN/hello

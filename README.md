@@ -1,16 +1,7 @@
 Configuration
 ========================================
 
-  Patch `web/wsgiserver/__init__.py`
-
-    # See http://aspn.activestate.com/ASPN/Cookbook/Python/Recipe/442473
-    ctx = SSL.Context(SSL.SSLv23_METHOD)                                
-    ctx.use_privatekey_file(self.ssl_private_key)                       
-    ctx.use_certificate_file(self.ssl_certificate)                      
-								       
-    # Chui Tey                                                          
-    if self.ssl_certificate_chain:                                      
-        ctx.use_certificate_chain_file(self.ssl_certificate_chain)      
+    sudo ./reset-the-world.ps
 
 
 Running the tutorial
@@ -20,3 +11,6 @@ Running the tutorial
     sudo python app.py 443
 
 
+To do
+==============
+    Run some tests after reset-the-world
